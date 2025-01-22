@@ -1,12 +1,12 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../utils/db"
+import { sequelize } from "../utils/db"
 import UserAccount from "./user_account";
 
 const EmployeeData = sequelize.define(
     'EmployeeData',
     {
         userId: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             primaryKey: true,
         },
         fullName: {
@@ -36,10 +36,10 @@ const EmployeeData = sequelize.define(
     }
 );
 
-UserAccount.hasOne(EmployeeData, {
-    foreignKey: 'UserId'
-});
+// UserAccount.hasOne(EmployeeData, {
+//     foreignKey: 'UserId'
+// });
 
-sequelize.sync();
+// sequelize.sync();
 
 export default EmployeeData;

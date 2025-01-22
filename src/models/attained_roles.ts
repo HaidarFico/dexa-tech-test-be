@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../utils/db"
+import { sequelize } from "../utils/db"
 
 const AttainedRoles = sequelize.define(
     'AttainedRoles',
@@ -20,6 +20,6 @@ const AttainedRoles = sequelize.define(
     }
 );
 
-sequelize.sync();
+// sequelize.sync();
 
 export default AttainedRoles;

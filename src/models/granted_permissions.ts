@@ -1,16 +1,16 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../utils/db"
+import { sequelize } from "../utils/db"
 
 const GrantedPermissions = sequelize.define(
     'GrantedPermissions',
     {
         roleId: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4
         },
         permissionId: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4
         },
@@ -19,6 +19,6 @@ const GrantedPermissions = sequelize.define(
         tableName: 'granted_permissions',
     }
 );
-sequelize.sync();
+// sequelize.sync();
 
 export default GrantedPermissions;

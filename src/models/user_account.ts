@@ -1,5 +1,5 @@
 import { DataTypes } from "sequelize";
-import sequelize from "../utils/db"
+import { sequelize } from "../utils/db"
 import UserRoles from "./user_roles";
 import AttainedRoles from "./attained_roles";
 
@@ -7,7 +7,7 @@ const UserAccount = sequelize.define(
     'UserAccount',
     {
         userId: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4
         },
@@ -37,8 +37,8 @@ const UserAccount = sequelize.define(
     }
 );
 
-UserAccount.belongsToMany(UserRoles, {through: AttainedRoles, foreignKey: 'userId'});
+// UserAccount.belongsToMany(UserRoles, {through: AttainedRoles, foreignKey: 'userId'});
 
-sequelize.sync();
+// sequelize.sync();
 
 export default UserAccount;
