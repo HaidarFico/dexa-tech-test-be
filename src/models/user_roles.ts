@@ -1,9 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../utils/db"
-import UserAccount from "./user_account";
-import AttainedRoles from "./attained_roles";
-import Permissions from "./permissions";
-import GrantedPermissions from "./granted_permissions";
+import sequelize from "../utils/db"
 
 const UserRoles = sequelize.define(
     'UserRoles',
@@ -22,8 +18,9 @@ const UserRoles = sequelize.define(
         tableName: 'user_role',
     }
 );
-// UserRoles.belongsToMany(UserAccount, {through: AttainedRoles, foreignKey: 'roleId'});
-// UserRoles.belongsToMany(Permissions, {through: GrantedPermissions, foreignKey: 'roleId'});
-// sequelize.sync();
+
+// console.log(Permissions)
+// UserRoles.belongsToMany(Permissions, { through: GrantedPermissions, foreignKey: 'roleId' });
+
 
 export default UserRoles;

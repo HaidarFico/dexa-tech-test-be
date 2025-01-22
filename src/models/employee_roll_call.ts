@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../utils/db"
-import UserAccount from "./user_account";
+import sequelize from "../utils/db"
 
 const EmployeeRollCall = sequelize.define(
     'EmployeeRollCall',
@@ -8,20 +7,17 @@ const EmployeeRollCall = sequelize.define(
         rollCallId: {
             type: DataTypes.UUID,
             primaryKey: true,
-        },
-        userId: {
-            type: DataTypes.UUID,
-            allowNull: false,
+            defaultValue: DataTypes.UUIDV4,
         },
         clockInTime: {
-            type: DataTypes.TIME,
+            type: DataTypes.DATE,
             allowNull: false,
         },
         clockOutTime: {
-            type: DataTypes.TIME,
+            type: DataTypes.DATE,
             allowNull: true,
         },
-        PhotoId: {
+        photoId: {
             type: DataTypes.UUID,
             allowNull: false,
             defaultValue: DataTypes.UUIDV4,
@@ -32,11 +28,5 @@ const EmployeeRollCall = sequelize.define(
         timestamps: true,
     }
 );
-
-// UserAccount.hasMany(EmployeeRollCall, {
-//     foreignKey: 'UserId'
-// });
-
-// sequelize.sync();
 
 export default EmployeeRollCall;

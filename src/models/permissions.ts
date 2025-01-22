@@ -1,7 +1,5 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../utils/db"
-import UserRoles from "./user_roles";
-import GrantedPermissions from "./granted_permissions";
+import sequelize from "../utils/db"
 
 const Permissions = sequelize.define(
     'Permissions',
@@ -20,7 +18,5 @@ const Permissions = sequelize.define(
         tableName: 'permissions',
     }
 );
-// Permissions.belongsToMany(UserRoles, {through: GrantedPermissions, foreignKey: 'permissionId'});
-// sequelize.sync();
 
 export default Permissions;

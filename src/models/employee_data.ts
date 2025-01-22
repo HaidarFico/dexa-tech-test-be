@@ -1,20 +1,20 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../utils/db"
-import UserAccount from "./user_account";
+import sequelize from "../utils/db"
 
 const EmployeeData = sequelize.define(
     'EmployeeData',
     {
-        userId: {
+        employeeDataId: {
             type: DataTypes.UUID,
             primaryKey: true,
+            defaultValue: DataTypes.UUIDV4,
         },
         fullName: {
             type: DataTypes.STRING(50),
             allowNull: true,
         },
         dateOfBirth: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: true,
         },
         gender: {
@@ -35,11 +35,5 @@ const EmployeeData = sequelize.define(
         timestamps: true,
     }
 );
-
-// UserAccount.hasOne(EmployeeData, {
-//     foreignKey: 'UserId'
-// });
-
-// sequelize.sync();
 
 export default EmployeeData;

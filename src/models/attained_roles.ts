@@ -1,16 +1,16 @@
 import { DataTypes } from "sequelize";
-import { sequelize } from "../utils/db"
+import sequelize from "../utils/db"
 
 const AttainedRoles = sequelize.define(
     'AttainedRoles',
     {
         userId: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4
         },
         roleId: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             primaryKey: true,
             defaultValue: DataTypes.UUIDV4
         },
@@ -19,7 +19,5 @@ const AttainedRoles = sequelize.define(
         tableName: 'attained_roles',
     }
 );
-
-// sequelize.sync();
 
 export default AttainedRoles;

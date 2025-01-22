@@ -1,40 +1,49 @@
-import { sequelize } from "../utils/db";
-import UserAccount from "../models/user_account";
-import UserRoles from "../models/user_roles";
+import sequelize from "../utils/db";
 import { Request, Response, NextFunction } from "express";
-import EmployeeData from "../models/employee_data";
 import bcrypt from 'bcrypt';
 import { generateJWTToken } from "../middleware/jwt";
+import { StatusCodes } from "http-status-codes";
+
 
 const RegisterUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
+        const userAccountModel = sequelize.model('UserAccount');
+        const employeeDataModel = sequelize.model('EmployeeData');
+
         const transaction = await sequelize.transaction();
-        const { password, emailAddress } = req.body;
+        const { password, email_address } = req.body;
         const salt = await bcrypt.genSalt();
 
-        const newUser = await UserAccount.create(
+        const newUser = await userAccountModel.create(
             {
                 passwordHash: bcrypt.hashSync(password, salt),
                 passwordSalt: salt,
-                emailAddress: emailAddress,
+                emailAddress: email_address,
             },
             {
                 transaction: transaction,
             }
         );
-        const newEmployeeData = await EmployeeData.create(
+        if(newUser === null) {
+            throw new Error('create new user fail!');
+        }
+        
+        const newEmployeeData = await employeeDataModel.create(
             {
                 userId: newUser.getDataValue('userId'),
             },
             { transaction: transaction }
         );
+        if(newEmployeeData === null) {
+            throw new Error('create new user fail!');
+        }
         await transaction.commit();
         res.status(201).json(
             {
                 errors: null,
                 message: 'User created successfully!',
                 data: {
-                    temp: 'placeholder'
+                    userId: newUser.getDataValue('userId')
                 }
             }
         )
@@ -46,23 +55,30 @@ const RegisterUser = async (req: Request, res: Response, next: NextFunction) => 
 
 const LoginUser = async (req: Request, res: Response, next: NextFunction) => {
     try {
-        const { email, password } = req.body;
-        const emailLowerCase = email.toLowerCase()
-        const user = await UserAccount.findOne({ where: { emailAddress: emailLowerCase } })
+        const userAccountModel = sequelize.model('UserAccount');
+        const { email_address, password } = req.body;
+        const emailLowerCase = email_address.toLowerCase()
+        const user = await userAccountModel.findOne({ where: { emailAddress: emailLowerCase } })
         if (user === null) {
             throw new Error('User not found!')
         }
 
         const hashedPassword = bcrypt.hashSync(password, user.getDataValue('passwordSalt'));
         if (hashedPassword !== user.getDataValue('passwordHash')) {
-            throw new Error('Password does not match');
+            res.status(403).json(
+                {
+                    errors: StatusCodes.FORBIDDEN,
+                    message: 'Incorrect Password or Email!',
+                    data: null,
+                }
+            )
         }
 
         const token = generateJWTToken(emailLowerCase);
         res.status(200).json(
             {
                 errors: null,
-                message: 'Login Succesfull!!',
+                message: 'Login Succesfull!',
                 data: {
                     token: token
                 }
