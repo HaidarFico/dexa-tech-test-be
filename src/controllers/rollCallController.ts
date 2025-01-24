@@ -115,8 +115,6 @@ const CreateRollCall = async (req: any, res: Response, next: NextFunction) => {
     try {
         const rollCallModel = sequelize.model('EmployeeRollCall')
         const { user_id, clock_in_time } = req.body;
-        console.log('this is PHOTO ID')
-        console.log(req.file.filename)
         const photoId = req.file.filename;
         const rollCallInstance = await rollCallModel.create({
             userId: user_id,

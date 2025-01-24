@@ -5,6 +5,7 @@
   "scripts": {
     "build": "npx tsc",
     "start:dev": "nodemon src/index.ts",
+    "seed": "npx ts-node src/seed/seed.ts",
     "start": "node dist/index.js"
   },
   "author": "",

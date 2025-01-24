@@ -8,7 +8,6 @@ import UserAccount from "./user_account";
 import UserRoles from "./user_roles";
 
 const implementRelations = () => {
-    // sequelize.dropAllSchemas();
     Permissions.belongsToMany(UserRoles, { through: 'granted_permissions', foreignKey: 'permissionId' });
     UserRoles.belongsToMany(Permissions, { through: 'granted_permissions', foreignKey: 'roleId' });
     UserRoles.belongsToMany(UserAccount, { through: 'attained_roles', foreignKey: 'roleId' });

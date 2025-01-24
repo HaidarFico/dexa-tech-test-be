@@ -11,7 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-dbInit();
+
+dbInit(false);
 
 app.use('/auth', authRouter);
 app.use('/employee-administration', employeeAdministrationRouter);
