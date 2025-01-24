@@ -1,13 +1,21 @@
 import { StatusCodes } from "http-status-codes";
 import sequelize from "../utils/db";
 import { Request, Response, NextFunction } from "express";
+import { QueryTypes } from "sequelize";
 
 
 const ViewEmployeeDataById = async (req: any, res: Response) => {
     try {
         const employeeDataModel = sequelize.model('EmployeeData');
         const userId = req.params['userId'];
-        const employeeDataInstance = await employeeDataModel.findOne({ where: { userId: userId } });
+        // const employeeDataInstance = await employeeDataModel.findOne({ where: { userId: userId } });
+        const employeeDataInstance: any = await sequelize.query(
+            `SELECT * FROM user_account as ua INNER JOIN employee_data as ed ON ua.userId = ed.userId WHERE ed.userId = ? LIMIT 1`,
+            {
+                type: QueryTypes.SELECT,
+                replacements: [userId]
+            }
+        )
         if (employeeDataInstance === null) {
             res.status(404).json(
                 {
@@ -22,13 +30,13 @@ const ViewEmployeeDataById = async (req: any, res: Response) => {
                 errors: null,
                 message: 'Employee Data Found!',
                 data: {
-                    employeeDataId: employeeDataInstance?.getDataValue('employeeDataId'),
-                    userId: employeeDataInstance?.getDataValue('userId'),
-                    fullName: employeeDataInstance?.getDataValue('fullName'),
-                    dateOfBirth: employeeDataInstance?.getDataValue('dateOfBirth'),
-                    gender: employeeDataInstance?.getDataValue('gender'),
-                    position: employeeDataInstance?.getDataValue('position'),
-
+                    employeeDataId: employeeDataInstance[0].employeeDataId,
+                    userId: employeeDataInstance[0].userId,
+                    fullName: employeeDataInstance[0].fullName,
+                    dateOfBirth: employeeDataInstance[0].dateOfBirth,
+                    gender: employeeDataInstance[0].gender,
+                    position: employeeDataInstance[0].position,
+                    email: employeeDataInstance[0].emailAddress
                 },
             }
         )
@@ -43,14 +51,14 @@ const ViewManyEmployeeData = async (req: any, res: Response) => {
         const employeeDataModel = sequelize.model('EmployeeData');
         const page = req.query['page'] || 0;
         
-        const employeeDataInstance = await employeeDataModel.findAll(
+        const employeeDataInstance = await sequelize.query(
+            `SELECT * FROM user_account as ua INNER JOIN employee_data as ed ON ua.userId = ed.userId LIMIT 10 OFFSET ?`,
             {
-                limit: 10,
-                offset: page * 10,
-                // order: ['updatedAt', 'DESC']
+                type: QueryTypes.SELECT,
+                replacements: [page * 10]
             }
         );
-        console.log('SAMPE SINI')
+        console
         if (employeeDataInstance === null) {
             res.status(404).json(
                 {

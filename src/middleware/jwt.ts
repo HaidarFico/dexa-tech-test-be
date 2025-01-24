@@ -2,9 +2,9 @@ import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import { NextFunction, Request, Response } from 'express';
 
-const generateJWTToken = (email: string) => {
+const generateJWTToken = (email: string, userId: string, roles: string) => {
     dotenv.config();
-    return jwt.sign({ email: email }, process.env.SECRET_ACCESS_TOKEN as string, { expiresIn: '3600s' });
+    return jwt.sign({ email: email, userId: userId, roles: roles }, process.env.SECRET_ACCESS_TOKEN as string, { expiresIn: '3600s' });
 }
 
 const validateJWTToken = (req: any, res: Response, next: NextFunction) => {

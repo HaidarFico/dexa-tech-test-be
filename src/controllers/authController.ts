@@ -74,7 +74,7 @@ const LoginUser = async (req: Request, res: Response, next: NextFunction) => {
             )
         }
 
-        const token = generateJWTToken(emailLowerCase);
+        const token = generateJWTToken(emailLowerCase, user.getDataValue('userId'), 'TEMP');
         res.status(200).json(
             {
                 errors: null,
