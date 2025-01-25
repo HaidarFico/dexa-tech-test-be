@@ -2,7 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import sequelize from "../utils/db";
 import { StatusCodes } from "http-status-codes";
 import { QueryTypes } from "sequelize";
-
+import { env } from "process";
 
 const ViewRollCallById = async (req: any, res: Response, next: NextFunction) => {
     try {
@@ -29,17 +29,17 @@ const ViewRollCallById = async (req: any, res: Response, next: NextFunction) => 
         )
     }
     catch (error) {
-
+        console.log(error);
     }
 }
 
 const ViewPhotoByPhotoId = async (req: any, res: Response, next: NextFunction) => {
     try {
         const photoId = req.params['photoId'];
-        res.status(200).sendFile(`/home/haidar-wsl/programmingLinux/dexaTechTestBE/uploads/${photoId}`);
+        res.status(200).sendFile(`${process.env.PHOTO_DIRECTORY}${photoId}`);
     }
     catch (error) {
-
+        console.log(error);
     }
 }
 
@@ -68,7 +68,7 @@ const ViewLatestRollCallById = async (req: any, res: Response, next: NextFunctio
         )
     }
     catch (error) {
-
+        console.log(error);
     }
 }
 
@@ -76,7 +76,6 @@ const ViewManyRollCall = async (req: any, res: Response, next: NextFunction) => 
     try {
         const employeeRollCallModel = sequelize.model('EmployeeRollCall');
         const userAccountModel = sequelize.model('UserAccount');
-        console.log(`THIS IS USER ACCOUNT MODEL ${userAccountModel}`)
         const page = req.query['page'] || 0;
 
         const employeeRollCallInstance = await sequelize.query(
@@ -86,7 +85,6 @@ const ViewManyRollCall = async (req: any, res: Response, next: NextFunction) => 
                 replacements: [page * 10]
             }
         );
-        console.log(`THIS IS EMPLOYEE ROLL CALL INSTANCE ${employeeRollCallInstance}`);
         if (employeeRollCallInstance === null) {
             res.status(404).json(
                 {
@@ -107,7 +105,7 @@ const ViewManyRollCall = async (req: any, res: Response, next: NextFunction) => 
         )
     }
     catch (error) {
-
+        console.log(error);
     }
 }
 
@@ -135,7 +133,7 @@ const CreateRollCall = async (req: any, res: Response, next: NextFunction) => {
         )
     }
     catch (error) {
-
+        console.log(error);
     }
 }
 
@@ -172,7 +170,7 @@ const UpdateRollCall = async (req: any, res: Response, next: NextFunction) => {
         )
     }
     catch (error) {
-
+        console.log(error);
     }
 }
 

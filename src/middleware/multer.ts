@@ -4,8 +4,7 @@ import path from 'path';
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        // cb(null, '/uploads');
-        cb(null, '/home/haidar-wsl/programmingLinux/dexaTechTestBE/uploads');
+        cb(null, `${process.env.PHOTO_DIRECTORY}`);
     },
     filename: (req, file, cb) => {
         cb(null, crypto.randomUUID());

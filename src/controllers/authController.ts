@@ -29,8 +29,6 @@ const RegisterUser = async (req: Request, res: Response, next: NextFunction) => 
                 }
             );
         }
-        console.log('THIS IS USERROLE')
-        console.log(userRole)
 
         const salt = await bcrypt.genSalt();
 
@@ -82,7 +80,7 @@ const RegisterUser = async (req: Request, res: Response, next: NextFunction) => 
         )
     }
     catch (error) {
-        next(new Error(`${error}`))
+        console.log(error)
     }
 }
 
@@ -104,7 +102,8 @@ const LoginUser = async (req: Request, res: Response, next: NextFunction) => {
                     message: 'Incorrect Password or Email!',
                     data: null,
                 }
-            )
+            ).send();
+            return;
         }
 
         const roleQuery = await sequelize.query(
@@ -130,7 +129,7 @@ const LoginUser = async (req: Request, res: Response, next: NextFunction) => {
             }
         )
     } catch (error) {
-        next(new Error(`${error}`))
+        console.log(error)
     }
 }
 export { RegisterUser, LoginUser }

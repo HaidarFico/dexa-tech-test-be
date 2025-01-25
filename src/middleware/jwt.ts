@@ -52,7 +52,6 @@ const validateHRFromJWTToken = async (req: any, res: Response, next: NextFunctio
             }
         );
         roleQuery.forEach((value: any) => {
-            console.log(value.roleName)
             if(value.roleName === 'hr') {
                 isAuthenticated = true;
                 next();
@@ -67,7 +66,10 @@ const validateHRFromJWTToken = async (req: any, res: Response, next: NextFunctio
 const validateUserFromJWTToken = async (req: any, res: Response, next: NextFunction) => {
     dotenv.config();
     const authHeader: string = req.headers['authorization'];
-    if (authHeader === undefined || authHeader === null) res.sendStatus(401);
+    if (authHeader === undefined || authHeader === null) {
+        res.status(401).send();
+        return;
+    };
     const token = authHeader.split(' ')[1]
     if (token === null) res.status(403).send();
 
@@ -77,7 +79,7 @@ const validateUserFromJWTToken = async (req: any, res: Response, next: NextFunct
             res.status(403).send();
         }
         let isAuthenticated = false;
-        const userId: any = user.userId;
+        const userId: any = user?.userId;
         req.user = userId;
         const roleQuery = await sequelize.query(
             'SELECT ar.roleId, ur.roleName FROM attained_roles as ar INNER JOIN user_role AS ur ON ar.roleId = ur.roleId WHERE ar.userId = ?',
@@ -87,7 +89,6 @@ const validateUserFromJWTToken = async (req: any, res: Response, next: NextFunct
             }
         );
         roleQuery.forEach((value: any) => {
-            console.log(value.roleName)
             if(value.roleName === 'user') {
                 isAuthenticated = true;
                 next();
