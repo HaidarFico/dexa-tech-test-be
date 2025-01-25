@@ -7,7 +7,7 @@ import Permissions from "./permissions";
 import UserAccount from "./user_account";
 import UserRoles from "./user_roles";
 
-const implementRelations = () => {
+const implementRelations = async () => {
     Permissions.belongsToMany(UserRoles, { through: 'granted_permissions', foreignKey: 'permissionId' });
     UserRoles.belongsToMany(Permissions, { through: 'granted_permissions', foreignKey: 'roleId' });
     UserRoles.belongsToMany(UserAccount, { through: 'attained_roles', foreignKey: 'roleId' });
@@ -17,12 +17,11 @@ const implementRelations = () => {
         foreignKey: 'userId'
     }
     );
-    // EmployeeData.belongsTo(UserAccount);
     UserAccount.hasMany(EmployeeRollCall, {
         foreignKey: 'userId'
     });
-    // EmployeeRollCall.belongsTo(UserAccount);
-    sequelize.sync();
+    
+    await sequelize.sync();
 }
 
 export default implementRelations;

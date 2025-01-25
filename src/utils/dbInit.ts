@@ -4,12 +4,12 @@ import sequelize from "./db";
 import { userRolesMigration } from "../migration/userRolesMigration";
 import { GrantedPermissionsMigration } from "../migration/grantedPermissionsMigration";
 
-const dbInit = (isSeed: boolean) => {
-    implementRelations();
+const dbInit = async (isSeed: boolean) => {
+    await implementRelations();
     if(isSeed) {
-        PermissionsMigration(sequelize.getQueryInterface());
-        userRolesMigration(sequelize.getQueryInterface());
-        GrantedPermissionsMigration(sequelize.getQueryInterface());
+        await PermissionsMigration(sequelize.getQueryInterface());
+        await userRolesMigration(sequelize.getQueryInterface());
+        await GrantedPermissionsMigration(sequelize.getQueryInterface());
     }
 }
 
