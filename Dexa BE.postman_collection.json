@@ -1,0 +1,1935 @@
+{
+	"info": {
+		"_postman_id": "4831d4db-f6ec-4125-af3d-aa7aa6e7e1a5",
+		"name": "Dexa BE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29356164"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"ExamplePassword\",\r\n    \"email_address\": \"ExampleEmail@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"ExamplePassword\",\r\n    \"email_address\": \"ExampleEmail@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "330"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"14a-eqmNiKWLLejES63HoDHFgeieG4Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:31:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Login Succesfull!\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"ExamplePassword\",\r\n    \"email_address\": \"ExampleEmail@gmail.com\",\r\n    \"user_role\": \"hr\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"ExamplePassword\",\r\n    \"email_address\": \"ExampleEmail@gmail.com\",\r\n    \"user_role\": \"hr\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "111"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6f-MLuI2Ky9JdSivaEdFcNZmXGQPno\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:30:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"User created successfully!\",\n    \"data\": {\n        \"userId\": \"07e401fa-0e96-434c-a60a-2ad0be0b8068\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Employee Data Admin",
+			"item": [
+				{
+					"name": "ViewById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/employee-administration/employee-data/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee-administration",
+								"employee-data",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "07e401fa-0e96-434c-a60a-2ad0be0b8068"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ViewById - FORBIDDEN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/employee-administration/employee-data/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"employee-administration",
+										"employee-data",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "3055f5cb-76be-4c2a-9cf1-54026469f8d8"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:31:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						},
+						{
+							"name": "ViewById - EMPTY",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/employee-administration/employee-data/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"employee-administration",
+										"employee-data",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "07e401fa-0e96-434c-a60a-2ad0be0b8068"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "259"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"103-TQ2WfMgmtAv4uiMP/L+MWTuwlWs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:32:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Employee Data Found!\",\n    \"data\": {\n        \"employeeDataId\": \"8dc101ec-3a81-4220-b034-e72a4246da3e\",\n        \"userId\": \"07e401fa-0e96-434c-a60a-2ad0be0b8068\",\n        \"fullName\": null,\n        \"dateOfBirth\": null,\n        \"gender\": null,\n        \"position\": null,\n        \"email\": \"exampleemail@gmail.com\"\n    }\n}"
+						},
+						{
+							"name": "ViewById - FILLED",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/employee-administration/employee-data/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"employee-administration",
+										"employee-data",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "ab737014-8156-42be-9245-8cbba2d7a4d6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "278"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"116-rk3mzuwBkc+IvkVFWRVFsmUgNaE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:33:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Employee Data Found!\",\n    \"data\": {\n        \"employeeDataId\": \"25338a65-9cee-4c4d-9160-b6b874f082e4\",\n        \"userId\": \"ab737014-8156-42be-9245-8cbba2d7a4d6\",\n        \"fullName\": \"TEST123456\",\n        \"dateOfBirth\": \"2001-01-01\",\n        \"gender\": \"m\",\n        \"position\": \"Test Post 123\",\n        \"email\": \"test1@gmail.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ViewMany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/employee-administration/employee-data?page=0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee-administration",
+								"employee-data"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ViewMany - FORBIDDEN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/employee-administration/employee-data?page=0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"employee-administration",
+										"employee-data"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:33:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						},
+						{
+							"name": "ViewMany",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/employee-administration/employee-data?page=0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"employee-administration",
+										"employee-data"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10b8-jJWeC7hIzwYu9GmqZnpughdcps8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:34:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Employee Data Found!\",\n    \"data\": {\n        \"employeeDataArray\": [\n            [\n                {\n                    \"userId\": \"a82d62ef-0f92-4d57-8c06-ac648c1d09ae\",\n                    \"passwordHash\": \"$2b$10$SYhjGq2/zgCJT1jOPi3bZuKzz08h9jtMvchxKSGcCmKToYmWbZeB6\",\n                    \"passwordSalt\": \"$2b$10$SYhjGq2/zgCJT1jOPi3bZu\",\n                    \"emailAddress\": \"testtemp@gmail.com\",\n                    \"createdAt\": \"2025-01-24T21:56:43.000Z\",\n                    \"updatedAt\": \"2025-01-25T04:36:15.000Z\",\n                    \"employeeDataId\": \"1fb02642-6348-451e-ba1b-5fa9d918d30c\",\n                    \"fullName\": \"test\",\n                    \"dateOfBirth\": \"1111-11-11\",\n                    \"gender\": \"f\",\n                    \"position\": \"fdsaweagaweg\"\n                },\n                {\n                    \"userId\": \"ab737014-8156-42be-9245-8cbba2d7a4d6\",\n                    \"passwordHash\": \"$2b$10$mWdF3vKOHAbv2uH2UolkKuxOVRFMr7lYDzO9T24TmnOBxILQVT5Ku\",\n                    \"passwordSalt\": \"$2b$10$mWdF3vKOHAbv2uH2UolkKu\",\n                    \"emailAddress\": \"test1@gmail.com\",\n                    \"createdAt\": \"2025-01-23T14:46:30.000Z\",\n                    \"updatedAt\": \"2025-01-24T05:05:46.000Z\",\n                    \"employeeDataId\": \"25338a65-9cee-4c4d-9160-b6b874f082e4\",\n                    \"fullName\": \"TEST123456\",\n                    \"dateOfBirth\": \"2001-01-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"Test Post 123\"\n                },\n                {\n                    \"userId\": \"7e1de05f-72e4-4e41-bf30-3db1eac2aedd\",\n                    \"passwordHash\": \"$2b$10$zq5g2anT2gp0myr.yxx5WuFb.F3TyQZR8DBFuZKq1WhtJB/8HtI0S\",\n                    \"passwordSalt\": \"$2b$10$zq5g2anT2gp0myr.yxx5Wu\",\n                    \"emailAddress\": \"123@gmail.com\",\n                    \"createdAt\": \"2025-01-24T22:05:42.000Z\",\n                    \"updatedAt\": \"2025-01-24T22:30:26.000Z\",\n                    \"employeeDataId\": \"3c40d948-039f-487c-b8dc-8c8eee36fcb4\",\n                    \"fullName\": \"awefawefawef\",\n                    \"dateOfBirth\": \"2000-01-11\",\n                    \"gender\": \"m\",\n                    \"position\": \"CEO\"\n                },\n                {\n                    \"userId\": \"c7f09c57-8a86-4b2c-a1de-b2381bbb279b\",\n                    \"passwordHash\": \"$2b$10$4d8Cws72Shdl/djzVTxSpeD77jQwbcFUFh5PUNwV2n2r.aOSHVTqa\",\n                    \"passwordSalt\": \"$2b$10$4d8Cws72Shdl/djzVTxSpe\",\n                    \"emailAddress\": \"testauth2@gmail.com\",\n                    \"createdAt\": \"2025-01-24T19:45:53.000Z\",\n                    \"updatedAt\": \"2025-01-24T19:45:53.000Z\",\n                    \"employeeDataId\": \"59f8a4d3-1c74-4776-b4d5-28ce93630332\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"userId\": \"443bf822-b4cc-49ea-88b0-923cebf43c7b\",\n                    \"passwordHash\": \"$2b$10$cY1q64TrAduT3RgMgHqp6ucs2626CviKUS6ayirdvefzVWCUppXJS\",\n                    \"passwordSalt\": \"$2b$10$cY1q64TrAduT3RgMgHqp6u\",\n                    \"emailAddress\": \"employeefinalrunthrough@gmail.com\",\n                    \"createdAt\": \"2025-01-25T05:44:59.000Z\",\n                    \"updatedAt\": \"2025-01-25T05:44:59.000Z\",\n                    \"employeeDataId\": \"5a6415e6-cb68-40da-9394-d2e05a52fa1a\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"userId\": \"1907acff-adac-4a88-9af8-520e133a4a51\",\n                    \"passwordHash\": \"$2b$10$t0DksGFIGGSCYQ0S8FL05ehKA8enUAnHWW2wOEmi8hZiyvy6Zh7mC\",\n                    \"passwordSalt\": \"$2b$10$t0DksGFIGGSCYQ0S8FL05e\",\n                    \"emailAddress\": \"hrcreatetest@gmail.com\",\n                    \"createdAt\": \"2025-01-24T19:52:57.000Z\",\n                    \"updatedAt\": \"2025-01-24T19:52:57.000Z\",\n                    \"employeeDataId\": \"78ffe3aa-d77a-41bf-a149-ee0223189781\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"userId\": \"07e401fa-0e96-434c-a60a-2ad0be0b8068\",\n                    \"passwordHash\": \"$2b$10$xYnpsjKKZD29/lHgscfr1.rqwpWnrZDAW6mkSTMmWDyLMa7XPq2ia\",\n                    \"passwordSalt\": \"$2b$10$xYnpsjKKZD29/lHgscfr1.\",\n                    \"emailAddress\": \"exampleemail@gmail.com\",\n                    \"createdAt\": \"2025-01-25T06:30:52.000Z\",\n                    \"updatedAt\": \"2025-01-25T06:30:52.000Z\",\n                    \"employeeDataId\": \"8dc101ec-3a81-4220-b034-e72a4246da3e\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"userId\": \"25707932-bf3e-4d80-81d7-651feeac3c40\",\n                    \"passwordHash\": \"$2b$10$QJPUcfqHcOSvokqHinDJ3.TKpxu89cF0l5hZmfH/q9EJeNWnO2Rga\",\n                    \"passwordSalt\": \"$2b$10$QJPUcfqHcOSvokqHinDJ3.\",\n                    \"emailAddress\": \"testcreate@gmail.com\",\n                    \"createdAt\": \"2025-01-24T21:50:46.000Z\",\n                    \"updatedAt\": \"2025-01-24T21:50:46.000Z\",\n                    \"employeeDataId\": \"927a1091-9ab7-44bd-aa97-7943e7c492c8\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"userId\": \"68d27107-414b-4e08-b2c4-962533fe9220\",\n                    \"passwordHash\": \"$2b$10$LlPhNX0Jc/e.nZJyfuQqOe0G2LDsJN3eNRBpklIGl4NyCLRJRSAii\",\n                    \"passwordSalt\": \"$2b$10$LlPhNX0Jc/e.nZJyfuQqOe\",\n                    \"emailAddress\": \"test12314125125@gmail.com\",\n                    \"createdAt\": \"2025-01-24T21:52:36.000Z\",\n                    \"updatedAt\": \"2025-01-24T21:52:36.000Z\",\n                    \"employeeDataId\": \"9a158f90-b695-4807-9b3d-1c6246784e6f\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\",\n                    \"passwordHash\": \"$2b$10$eZ8ZTLzpEIzZpjT001yGiee1bpv2Z8VI3J00F.9l6DgBmb7xro6Ye\",\n                    \"passwordSalt\": \"$2b$10$eZ8ZTLzpEIzZpjT001yGie\",\n                    \"emailAddress\": \"runthroughtestfinal@gmail.com\",\n                    \"createdAt\": \"2025-01-25T04:07:18.000Z\",\n                    \"updatedAt\": \"2025-01-25T04:07:18.000Z\",\n                    \"employeeDataId\": \"9cac3678-7c79-4124-8170-1e51f4f6f07b\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                }\n            ]\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpsertById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"07e401fa-0e96-434c-a60a-2ad0be0b8068\",\r\n    \"full_name\": \"Full Name Postman Example\",\r\n    \"date_of_birth\": \"2001-12-01\",\r\n    \"gender\": \"m\",\r\n    \"position\": \"CEO\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/employee-administration/employee-data/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"employee-administration",
+								"employee-data",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpsertById - FORBIDDEN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"07e401fa-0e96-434c-a60a-2ad0be0b8068\",\r\n    \"full_name\": \"Full Name Postman Example\",\r\n    \"date_of_birth\": \"2001-12-01\",\r\n    \"gender\": \"m\",\r\n    \"position\": \"CEO\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/employee-administration/employee-data/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"employee-administration",
+										"employee-data",
+										""
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:35:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						},
+						{
+							"name": "UpsertById",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"07e401fa-0e96-434c-a60a-2ad0be0b8068\",\r\n    \"full_name\": \"Full Name Postman Example\",\r\n    \"date_of_birth\": \"2001-12-01\",\r\n    \"gender\": \"m\",\r\n    \"position\": \"CEO\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/employee-administration/employee-data/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"employee-administration",
+										"employee-data",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cb-O+jSMwgYrxutTIR75wuslwr/i/8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:35:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Employee Data Updated!\",\n    \"data\": {\n        \"userId\": \"07e401fa-0e96-434c-a60a-2ad0be0b8068\",\n        \"fullName\": \"Full Name Postman Example\",\n        \"dateOfBirth\": \"2001-12-01\",\n        \"gender\": \"m\",\n        \"position\": \"CEO\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Roll Call",
+			"item": [
+				{
+					"name": "ViewById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/roll-call-administration/roll-call/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roll-call-administration",
+								"roll-call",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "a352363b-3b95-4961-ae22-5b669bc8422f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ViewById - FORBIDDEN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "2e493dc5-b125-457e-a52d-7417d1bc9ca8"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:36:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						},
+						{
+							"name": "ViewById - CLOCKED OUT",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "2e493dc5-b125-457e-a52d-7417d1bc9ca8"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "389"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"185-UoIPHBmc+oxDEPYZpALXKMEzqiA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:37:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Roll Call Data Found!\",\n    \"data\": {\n        \"rollCallInstance\": {\n            \"rollCallId\": \"2e493dc5-b125-457e-a52d-7417d1bc9ca8\",\n            \"clockInTime\": \"2025-01-24T22:06:54.000Z\",\n            \"clockOutTime\": \"2025-01-24T22:08:16.000Z\",\n            \"photoId\": \"de7ea328-ef9e-4a78-a771-d0bdf29764f3\",\n            \"createdAt\": \"2025-01-25T05:06:58.000Z\",\n            \"updatedAt\": \"2025-01-25T05:08:18.000Z\",\n            \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\"\n        }\n    }\n}"
+						},
+						{
+							"name": "ViewById - CLOCKED IN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "a352363b-3b95-4961-ae22-5b669bc8422f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16f-V93LcBe8MOZZuiTOdYu+XtFmAak\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:38:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Roll Call Data Found!\",\n    \"data\": {\n        \"rollCallInstance\": {\n            \"rollCallId\": \"a352363b-3b95-4961-ae22-5b669bc8422f\",\n            \"clockInTime\": \"2025-01-24T21:30:13.000Z\",\n            \"clockOutTime\": null,\n            \"photoId\": \"cc0b3686-f8c6-4bad-9d43-feb995fe8ed9\",\n            \"createdAt\": \"2025-01-25T04:30:15.000Z\",\n            \"updatedAt\": \"2025-01-25T04:30:15.000Z\",\n            \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ViewPhotoByPhotoId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/roll-call-administration/roll-call/photo/:photoId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roll-call-administration",
+								"roll-call",
+								"photo",
+								":photoId"
+							],
+							"variable": [
+								{
+									"key": "photoId",
+									"value": "8f1a301f-6fad-4bc5-8983-3c6828595320"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ViewPhotoByPhotoId - FORBIDDEN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call/photo/:photoId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call",
+										"photo",
+										":photoId"
+									],
+									"variable": [
+										{
+											"key": "photoId",
+											"value": "8f9abc3b-1e88-4ce6-8717-591990002268"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:38:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						},
+						{
+							"name": "ViewPhotoByPhotoId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call/photo/:photoId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call",
+										"photo",
+										":photoId"
+									],
+									"variable": [
+										{
+											"key": "photoId",
+											"value": "8f1a301f-6fad-4bc5-8983-3c6828595320"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "public, max-age=0"
+								},
+								{
+									"key": "Last-Modified",
+									"value": "Sat, 25 Jan 2025 04:52:45 GMT"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5f5-1949bce2319\""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1525"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:39:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "�PNG\r\n\u001a\n\u0000\u0000\u0000\rIHDR\u0000\u0000\u0000~\u0000\u0000\u00006\b\u0006\u0000\u0000\u0000\u0001(-�\u0000\u0000\u0000\u0001sRGB\u0000��\u001c�\u0000\u0000\u0000\u0004gAMA\u0000\u0000��\u000b�a\u0005\u0000\u0000\u0000\tpHYs\u0000\u0000\u000e�\u0000\u0000\u000e�\u0001�o�d\u0000\u0000\u0005�IDATx^�O�\u001cE\u0018�k�� �\u0017\u0005w��;�9(dw\u0011/���`@͢\u0017AI���\u0018�\"(F\u0014\u0002\u001aP<xP�1�A�\u0011���\u0017\u0011�\u0003dW�$��\u0002�<5�&�T�{��{۝�z����zk��W�[o��-�q׾KD�M�g\"2Z����E�q�y��r�_Svvv����\u001b\u000ev�6���\u0013�?��7�O��VVS\f\u000ba��\u0005���O��~�ۯ�dW�������ᤑ�k�+��O?dߪ�\u0002X��Ո�\u0017�����ʹ��;�:�L-|��\bIX����mmm�:\"���\u0011ߞk��ǟ���{/|��\b�\u0017\u0017�[\u0002{��������\u000b�^�޻��Q��U@��&y�$|��ܻ�޾!dW\u0015\u001dRf8�������={�ކz�����dߜߧ\u000f҃-/�w\u0003�8V�2M���N�77/�O\"�aI�$�m<����<���\u001cv}©%<\u000f��u�� \u0006l\u0013T�n��TІ���θ�����\u001avr��D.\u0013���4\n}v�~���\f<��c�3>\u000f��#L\u001e�(�j��c�/b�0I��a���;��z;����T)��\r\u0016��Ƃ�Ԁ@|29���������\n�͞��n��7Tt�釅A�:�c/<緀N�㫖�Ν�7._��m��*�K��֟�jƼv�\u001b����\"k1\u0006;���^�z-�=����Kì�\u0018��X��\u0019vVo���K���K-�'\u00111X��Yy���J^���\r�\u0017%�ԫ��5������$�x�z�$ԃ�M�---Nޢڠ��X�\u0006��\u0015\u0015}X��\u0003�]c�=�˃���d���^E�1屳[=��sb�~��\u0014͗lA���l�z<@�/�R��\u0013b��\u0013�D�������׉TbϽI�C8\u001e�f���Al�zJ�Y}��\f��\u0001�<[�p��$�d����m�4��E]Ǿ\b�\fڞq\"8\t\u001eb븻���L�\u000e�L���x��8��4��o\u0019\u0016��r���*���!:�2�'�+��o���<j\u000b��u\u001fb%\u0013���O\u001b�W��t\u0002B�+꓉\u000f\u00139��i�u_�m$T+�\u0016��E\u0017���\r�q���|˭���]W�ʕ=�%O>�xVs͓\u0007�{�����\u001f\u00157��`y�ml��Zi{x񥗯�2����`��Ϲ�Q'#�މ㯺\u000f?x��\u0001��\u0017_~寛���ǟކv�����9 {\u0016\u0016��oX�Rᬎ(t��+��9a\u000e�����\u000f������w~����A1�߲\u0006\u0013\u0014�0������_�O�!l*m��}u���\u000e���\b�(o^ڦv�W�8¾�ӓ�-�]�pU��SCѠ\r{����</�o�w\u0011~�\u001d�\u000e�<^�S\bS$E���C�A�$�1\u0001e\u000f\u001fB�x��;V�����6{\u001e�\t��\u0003l\u001b\u001a\u0015̻�.oQч�\u0011�\u0011�m��d�5�c\u0002�,Ie\u0011�m�\u001a�B}\u001f�\u000b��c�'\u0014�'�Y%y���\u001a����\u0010\u001c��r_n�$|\u0000�\u001e��j�0�=���ޭ�M\u0012>\u0000�&�S��`A\u0014\u001dIg��^��\u0019^N���$.\u000f<��G\u001f��f���%��v� ��zxH\u0012>R�q.R�𑒄��$|�$�#%\t\u001f)I�HI�GJ\u0012>R�𑒄��$|�$�#%\t\u001f)I�HI�GJ\u0012>R�𑒄��$|�$�Ĺ�\u0000o�k�{��a\u0000\u0000\u0000\u0000IEND�B`�"
+						}
+					]
+				},
+				{
+					"name": "ViewLatestByUserId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/roll-call-administration/roll-call/latest/:userId",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roll-call-administration",
+								"roll-call",
+								"latest",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1fd816b6-8b49-48cf-9161-33aac3c769be"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ViewLatestByUserId - FORBIDDEN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call/latest/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call",
+										"latest",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "8f1a301f-6fad-4bc5-8983-3c6828595320"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:40:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "ViewLatestByUserId",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call/latest/:userId",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call",
+										"latest",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": "1fd816b6-8b49-48cf-9161-33aac3c769be"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "389"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"185-UoIPHBmc+oxDEPYZpALXKMEzqiA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:40:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Roll Call Data Found!\",\n    \"data\": {\n        \"rollCallInstance\": {\n            \"rollCallId\": \"2e493dc5-b125-457e-a52d-7417d1bc9ca8\",\n            \"clockInTime\": \"2025-01-24T22:06:54.000Z\",\n            \"clockOutTime\": \"2025-01-24T22:08:16.000Z\",\n            \"photoId\": \"de7ea328-ef9e-4a78-a771-d0bdf29764f3\",\n            \"createdAt\": \"2025-01-25T05:06:58.000Z\",\n            \"updatedAt\": \"2025-01-25T05:08:18.000Z\",\n            \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "ViewMany",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/roll-call-administration/roll-call?page=0",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roll-call-administration",
+								"roll-call"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ViewMany - FORBIDDEN",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call?page=0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "12"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c-dAuDFQrdjS3hezqxDTNgW7AOlYk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:40:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Unauthorized"
+						},
+						{
+							"name": "ViewMany",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call?page=0",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "4521"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11a9-2UvQ3uKnhAPG38FRX7G9PBwQkXY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:41:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Roll Call Data Found!\",\n    \"data\": {\n        \"employeeRollCallArray\": [\n            [\n                {\n                    \"rollCallId\": \"065de366-fb78-4781-94ae-304a73f1ac96\",\n                    \"clockInTime\": \"2025-01-23T11:43:34.000Z\",\n                    \"clockOutTime\": \"2025-01-23T11:43:42.000Z\",\n                    \"photoId\": \"4d2bd22a-8263-40ca-bc09-5a394ac0906c\",\n                    \"createdAt\": \"2025-01-22T21:28:55.000Z\",\n                    \"updatedAt\": \"2025-01-22T21:36:06.000Z\",\n                    \"userId\": \"e30f415a-8612-49d7-a57b-59cf06084853\",\n                    \"employeeDataId\": \"f9ea7c0b-2f8c-4679-8940-bf4b0a1302b2\",\n                    \"fullName\": \"Example Full Name\",\n                    \"dateOfBirth\": \"2001-12-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"CEO\"\n                },\n                {\n                    \"rollCallId\": \"15563b4f-307d-4939-ad1e-22ecaf7c1f2a\",\n                    \"clockInTime\": \"2025-01-10T18:12:13.000Z\",\n                    \"clockOutTime\": \"2025-01-10T22:12:13.000Z\",\n                    \"photoId\": \"386f34c9-7823-4746-98fe-7ab73a9ba7e5\",\n                    \"createdAt\": \"2025-01-22T21:28:55.000Z\",\n                    \"updatedAt\": \"2025-01-22T21:36:06.000Z\",\n                    \"userId\": \"e30f415a-8612-49d7-a57b-59cf06084853\",\n                    \"employeeDataId\": \"f9ea7c0b-2f8c-4679-8940-bf4b0a1302b2\",\n                    \"fullName\": \"Example Full Name\",\n                    \"dateOfBirth\": \"2001-12-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"CEO\"\n                },\n                {\n                    \"rollCallId\": \"1c5f554d-c02f-4a75-9fe5-d0da267c0840\",\n                    \"clockInTime\": \"2025-01-23T11:45:44.000Z\",\n                    \"clockOutTime\": \"2025-01-23T11:45:54.000Z\",\n                    \"photoId\": \"4ee3a73e-1a36-486e-a4ec-078f5cbc9f01\",\n                    \"createdAt\": \"2025-01-22T21:28:55.000Z\",\n                    \"updatedAt\": \"2025-01-22T21:36:06.000Z\",\n                    \"userId\": \"e30f415a-8612-49d7-a57b-59cf06084853\",\n                    \"employeeDataId\": \"f9ea7c0b-2f8c-4679-8940-bf4b0a1302b2\",\n                    \"fullName\": \"Example Full Name\",\n                    \"dateOfBirth\": \"2001-12-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"CEO\"\n                },\n                {\n                    \"rollCallId\": \"2e493dc5-b125-457e-a52d-7417d1bc9ca8\",\n                    \"clockInTime\": \"2025-01-24T22:06:54.000Z\",\n                    \"clockOutTime\": \"2025-01-24T22:08:16.000Z\",\n                    \"photoId\": \"de7ea328-ef9e-4a78-a771-d0bdf29764f3\",\n                    \"createdAt\": \"2025-01-25T04:07:18.000Z\",\n                    \"updatedAt\": \"2025-01-25T04:07:18.000Z\",\n                    \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\",\n                    \"employeeDataId\": \"9cac3678-7c79-4124-8170-1e51f4f6f07b\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"rollCallId\": \"31dafe00-b30c-4647-b776-344819283e21\",\n                    \"clockInTime\": \"2025-01-10T18:12:13.000Z\",\n                    \"clockOutTime\": null,\n                    \"photoId\": \"43703c58-cef4-4fae-aa10-5bfb4befce0a\",\n                    \"createdAt\": \"2025-01-23T14:46:30.000Z\",\n                    \"updatedAt\": \"2025-01-24T05:05:46.000Z\",\n                    \"userId\": \"ab737014-8156-42be-9245-8cbba2d7a4d6\",\n                    \"employeeDataId\": \"25338a65-9cee-4c4d-9160-b6b874f082e4\",\n                    \"fullName\": \"TEST123456\",\n                    \"dateOfBirth\": \"2001-01-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"Test Post 123\"\n                },\n                {\n                    \"rollCallId\": \"4032a92c-2e98-4ec0-bb67-82ce22bc96bb\",\n                    \"clockInTime\": \"2025-01-24T21:52:40.000Z\",\n                    \"clockOutTime\": \"2025-01-24T22:05:36.000Z\",\n                    \"photoId\": \"8f1a301f-6fad-4bc5-8983-3c6828595320\",\n                    \"createdAt\": \"2025-01-25T04:07:18.000Z\",\n                    \"updatedAt\": \"2025-01-25T04:07:18.000Z\",\n                    \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\",\n                    \"employeeDataId\": \"9cac3678-7c79-4124-8170-1e51f4f6f07b\",\n                    \"fullName\": null,\n                    \"dateOfBirth\": null,\n                    \"gender\": null,\n                    \"position\": null\n                },\n                {\n                    \"rollCallId\": \"539e3919-af30-4e5c-b21b-8333f2f7e2e4\",\n                    \"clockInTime\": \"2025-01-10T18:12:13.000Z\",\n                    \"clockOutTime\": null,\n                    \"photoId\": \"20db0de3-7ad8-420a-b017-1a60b2c1ad3d\",\n                    \"createdAt\": \"2025-01-23T14:46:30.000Z\",\n                    \"updatedAt\": \"2025-01-24T05:05:46.000Z\",\n                    \"userId\": \"ab737014-8156-42be-9245-8cbba2d7a4d6\",\n                    \"employeeDataId\": \"25338a65-9cee-4c4d-9160-b6b874f082e4\",\n                    \"fullName\": \"TEST123456\",\n                    \"dateOfBirth\": \"2001-01-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"Test Post 123\"\n                },\n                {\n                    \"rollCallId\": \"58669861-988e-407e-8340-0f93ac3965b5\",\n                    \"clockInTime\": \"2025-01-10T18:12:13.000Z\",\n                    \"clockOutTime\": null,\n                    \"photoId\": \"4ff75d16-52d3-483a-8698-9f3571b16190\",\n                    \"createdAt\": \"2025-01-23T14:46:30.000Z\",\n                    \"updatedAt\": \"2025-01-24T05:05:46.000Z\",\n                    \"userId\": \"ab737014-8156-42be-9245-8cbba2d7a4d6\",\n                    \"employeeDataId\": \"25338a65-9cee-4c4d-9160-b6b874f082e4\",\n                    \"fullName\": \"TEST123456\",\n                    \"dateOfBirth\": \"2001-01-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"Test Post 123\"\n                },\n                {\n                    \"rollCallId\": \"72151021-2acd-4ac1-a3a8-3cccc9100ff2\",\n                    \"clockInTime\": \"2025-01-23T11:47:07.000Z\",\n                    \"clockOutTime\": \"2025-01-23T11:47:08.000Z\",\n                    \"photoId\": \"06376f2e-7111-4b79-b226-2970a8942233\",\n                    \"createdAt\": \"2025-01-22T21:28:55.000Z\",\n                    \"updatedAt\": \"2025-01-22T21:36:06.000Z\",\n                    \"userId\": \"e30f415a-8612-49d7-a57b-59cf06084853\",\n                    \"employeeDataId\": \"f9ea7c0b-2f8c-4679-8940-bf4b0a1302b2\",\n                    \"fullName\": \"Example Full Name\",\n                    \"dateOfBirth\": \"2001-12-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"CEO\"\n                },\n                {\n                    \"rollCallId\": \"805e8dfa-d729-48f4-8a3b-e09fa2f12bde\",\n                    \"clockInTime\": \"2025-01-24T00:15:03.000Z\",\n                    \"clockOutTime\": null,\n                    \"photoId\": \"1886ac2c-4564-4c95-b547-b51a05326176\",\n                    \"createdAt\": \"2025-01-22T21:28:55.000Z\",\n                    \"updatedAt\": \"2025-01-22T21:36:06.000Z\",\n                    \"userId\": \"e30f415a-8612-49d7-a57b-59cf06084853\",\n                    \"employeeDataId\": \"f9ea7c0b-2f8c-4679-8940-bf4b0a1302b2\",\n                    \"fullName\": \"Example Full Name\",\n                    \"dateOfBirth\": \"2001-12-01\",\n                    \"gender\": \"m\",\n                    \"position\": \"CEO\"\n                }\n            ]\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CreateRollCall",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImV4YW1wbGVlbWFpbEBnbWFpbC5jb20iLCJ1c2VySWQiOiIwN2U0MDFmYS0wZTk2LTQzNGMtYTYwYS0yYWQwYmUwYjgwNjgiLCJyb2xlcyI6WyJociIsInVzZXIiXSwiaWF0IjoxNzM3Nzg2Njc4LCJleHAiOjE3Mzc3OTAyNzh9.OAkHiOMPi-gQ5JzuwDzXODGXC7Yqqs20O-bMFvk6p5c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "user_id",
+									"value": "1fd816b6-8b49-48cf-9161-33aac3c769be",
+									"type": "text"
+								},
+								{
+									"key": "clock_in_time",
+									"value": "2025-01-11 01:12:13",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Fico/Downloads/Screenshot 2025-01-24 133616.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3000/roll-call-administration/roll-call",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roll-call-administration",
+								"roll-call"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateRollCall - FORBIDDEN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1fd816b6-8b49-48cf-9161-33aac3c769be",
+											"type": "text"
+										},
+										{
+											"key": "clock_in_time",
+											"value": "2025-01-11 01:12:13",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Fico/Downloads/Screenshot 2025-01-24 133616.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:41:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "CreateRollCall",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "user_id",
+											"value": "1fd816b6-8b49-48cf-9161-33aac3c769be",
+											"type": "text"
+										},
+										{
+											"key": "clock_in_time",
+											"value": "2025-01-11 01:12:13",
+											"type": "text"
+										},
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/Fico/Downloads/Screenshot 2025-01-24 133616.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "349"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15d-JjRFREyDY6DWSQbxW6zfeD/XESE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:41:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Roll Call Data Created!\",\n    \"data\": {\n        \"rollCallInstance\": {\n            \"rollCallId\": \"672df6b3-de05-4132-bbd1-ea910552d5ab\",\n            \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\",\n            \"clockInTime\": \"2025-01-10T18:12:13.000Z\",\n            \"photoId\": \"d7076f3e-e6e8-46dc-9874-ccb217708ff8\",\n            \"updatedAt\": \"2025-01-25T06:41:56.015Z\",\n            \"createdAt\": \"2025-01-25T06:41:56.015Z\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateRollCall",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\",\r\n    \"clock_out_time\": \"2025-01-11 05:12:15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/roll-call-administration/roll-call",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"roll-call-administration",
+								"roll-call"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateRollCall - FORBIDDEN",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\",\r\n    \"clock_out_time\": \"2025-01-11 05:12:15\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:43:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "UpdateRollCall",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\",\r\n    \"clock_out_time\": \"2025-01-11 05:12:15\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/roll-call-administration/roll-call",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"roll-call-administration",
+										"roll-call"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"187-eg4PqzFsHRhKpiDxN3CbmPv0zHw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 Jan 2025 06:43:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"errors\": null,\n    \"message\": \"Roll Call Data Updated!\",\n    \"data\": {\n        \"rollCallInstance\": {\n            \"rollCallId\": \"672df6b3-de05-4132-bbd1-ea910552d5ab\",\n            \"clockInTime\": \"2025-01-10T18:12:13.000Z\",\n            \"clockOutTime\": \"2025-01-10T22:12:15.000Z\",\n            \"photoId\": \"d7076f3e-e6e8-46dc-9874-ccb217708ff8\",\n            \"createdAt\": \"2025-01-25T06:41:56.000Z\",\n            \"updatedAt\": \"2025-01-25T06:43:23.518Z\",\n            \"userId\": \"1fd816b6-8b49-48cf-9161-33aac3c769be\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-IO4sEewGp+CtWpOr+D6lRcVyk3E\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 25 Jan 2025 06:35:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"server running!\"\n}"
+				}
+			]
+		}
+	]
+}
