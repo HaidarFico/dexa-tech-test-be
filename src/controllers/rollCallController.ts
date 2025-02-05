@@ -79,7 +79,8 @@ const ViewManyRollCall = async (req: any, res: Response, next: NextFunction) => 
         const page = req.query['page'] || 0;
 
         const employeeRollCallInstance = await sequelize.query(
-            `SELECT * FROM employee_roll_call as erc INNER JOIN employee_data as ed ON erc.userId = ed.userId LIMIT 10 OFFSET ?`,
+            `SELECT * FROM employee_roll_call AS erc INNER JOIN employee_data AS ed ON erc.userId = ed.userId ORDER BY erc.ClockInTime DESC LIMIT 10 OFFSET ?`,
+            // `SELECT * FROM employee_roll_call as erc INNER JOIN employee_data as ed ON erc.userId = ed.userId LIMIT 10 OFFSET ? ORDER BY erc.ClockInTime DESCENDING`,
             {
                 type: QueryTypes.SELECT,
                 replacements: [page * 10]

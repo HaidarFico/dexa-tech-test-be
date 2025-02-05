@@ -33,31 +33,36 @@ const validateHRFromJWTToken = async (req: any, res: Response, next: NextFunctio
         return;
     }
     const token = authHeader.split(' ')[1]
-    if (token === null){
+    if (token === null) {
         res.status(403).send();
-    } 
+    }
 
     jwt.verify(token as string, process.env.SECRET_ACCESS_TOKEN as string, async (err, user: any) => {
-        if (err) {
-            res.status(403).send();
-        }
-        let isAuthenticated = false;
-        const userId: any = user.userId;
-        req.user = userId;
-        const roleQuery = await sequelize.query(
-            'SELECT ar.roleId, ur.roleName FROM attained_roles as ar INNER JOIN user_role AS ur ON ar.roleId = ur.roleId WHERE ar.userId = ?',
-            {
-                type: QueryTypes.SELECT,
-                replacements: [userId],
+        try {
+            if (err) {
+                res.status(403).send();
             }
-        );
-        roleQuery.forEach((value: any) => {
-            if(value.roleName === 'hr') {
-                isAuthenticated = true;
-                next();
+            let isAuthenticated = false;
+            const userId: any = user.userId;
+            req.user = userId;
+            const roleQuery = await sequelize.query(
+                'SELECT ar.roleId, ur.roleName FROM attained_roles as ar INNER JOIN user_role AS ur ON ar.roleId = ur.roleId WHERE ar.userId = ?',
+                {
+                    type: QueryTypes.SELECT,
+                    replacements: [userId],
+                }
+            );
+            roleQuery.forEach((value: any) => {
+                if (value.roleName === 'hr') {
+                    isAuthenticated = true;
+                    next();
+                }
+            })
+            if (!isAuthenticated) {
+                res.status(401).send();
             }
-        })
-        if (!isAuthenticated) {
+        } catch (error) {
+            console.log(error);
             res.status(401).send();
         }
     })
@@ -75,26 +80,32 @@ const validateUserFromJWTToken = async (req: any, res: Response, next: NextFunct
 
 
     jwt.verify(token as string, process.env.SECRET_ACCESS_TOKEN as string, async (err, user: any) => {
-        if (err) {
-            res.status(403).send();
+        try {
+            if (err) {
+                res.status(403).send();
+            }
+            let isAuthenticated = false;
+            const userId: any = user?.userId;
+            req.user = userId;
+            const roleQuery = await sequelize.query(
+                'SELECT ar.roleId, ur.roleName FROM attained_roles as ar INNER JOIN user_role AS ur ON ar.roleId = ur.roleId WHERE ar.userId = ?',
+                {
+                    type: QueryTypes.SELECT,
+                    replacements: [userId],
+                }
+            );
+            roleQuery.forEach((value: any) => {
+                if (value.roleName === 'user') {
+                    isAuthenticated = true;
+                    next();
+                }
+            })
+            if (!isAuthenticated) {
+                res.status(401).send();
+            }
         }
-        let isAuthenticated = false;
-        const userId: any = user?.userId;
-        req.user = userId;
-        const roleQuery = await sequelize.query(
-            'SELECT ar.roleId, ur.roleName FROM attained_roles as ar INNER JOIN user_role AS ur ON ar.roleId = ur.roleId WHERE ar.userId = ?',
-            {
-                type: QueryTypes.SELECT,
-                replacements: [userId],
-            }
-        );
-        roleQuery.forEach((value: any) => {
-            if(value.roleName === 'user') {
-                isAuthenticated = true;
-                next();
-            }
-        })
-        if (!isAuthenticated) {
+        catch (error) {
+            console.log(error);
             res.status(401).send();
         }
     })
