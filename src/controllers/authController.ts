@@ -91,6 +91,13 @@ const LoginUser = async (req: Request, res: Response, next: NextFunction) => {
         const emailLowerCase = email_address.toLowerCase()
         const user = await userAccountModel.findOne({ where: { emailAddress: emailLowerCase } })
         if (user === null) {
+            res.status(403).json(
+                {
+                    errors: StatusCodes.FORBIDDEN,
+                    message: 'Incorrect Password or Email!',
+                    data: null,
+                }
+            ).send();
             throw new Error('User not found!')
         }
 
