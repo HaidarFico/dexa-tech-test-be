@@ -56,7 +56,6 @@ const ViewLatestRollCallById = async (req: any, res: Response, next: NextFunctio
                     data: null,
                 }
             )
-            return;
         }
         res.status(200).json(
             {
