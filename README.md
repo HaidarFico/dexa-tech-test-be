@@ -13,6 +13,3 @@ Requirements for setup:
 - run npm run seed
 - run `npm run start:dev` OR `npm run build && npm run start`
 - The Postman collection is available should one want to test the BE endpoints with a postman client.
-
-## Note
-- Make sure the PHOTO_DIRECTORY ends with a '/', example: PHOTO_DIRECTORY=/home/haidar-wsl/programmingLinux/dexatechtesttest/dexa-tech-test-be/uploads/
